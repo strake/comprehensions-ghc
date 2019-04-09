@@ -71,4 +71,4 @@ test-suite test
 
 source-repository head
   type:     git
-  location: https://github.com/strake/comprehensions-ghc.hs
+  location: https://github.com/strake/comprehensions-ghc.git
