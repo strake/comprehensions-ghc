@@ -1,5 +1,5 @@
 name:                comprehensions-ghc
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            Plugin to generalize comprehensions
 description:
   Add the following to your source file:
