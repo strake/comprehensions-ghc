@@ -1,7 +1,13 @@
 name:                comprehensions-ghc
 version:             0.1.0.0
 synopsis:            Plugin to generalize comprehensions
--- description:
+description:
+  Add the following to your source file:
+  .
+  > {-# LANGUAGE ApplicativeDo #-}
+  > {-# OPTIONS_GHC -fplugin=Comprehension.Plugin #-}
+  .
+  Now all comprehensions have an `Applicative` rather than a `Monad` constraint if possible ☺
 license:             BSD3
 license-file:        LICENSE
 author:              M Farkas-Dyck
