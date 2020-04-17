@@ -10,9 +10,7 @@ import Data.String (fromString)
 import Type.Reflection as R
 
 import qualified GhcPlugins as GHC
-import HsExtension (GhcPs, NoExt (..))
 import HsSyn
-import qualified HsTypes
 import Outputable (SDoc, ppr)
 import qualified Outputable as Ppr
 import SrcLoc
@@ -50,7 +48,6 @@ gpprPrec' prec t
   | headTyConOf [()]      == headTyConOf t = pprList $ asList t
   | Just NoExt <- cast t = Ppr.empty
   | Just _ <- cast t :: Maybe GHC.SourceText = Ppr.empty
-  | Just _ <- cast t :: Maybe HsTypes.Promoted = Ppr.empty
   | Just l <- cast t :: Maybe (HsLit GhcPs) = ppr l
   | Just n <- cast t :: Maybe GHC.RdrName   = Ppr.doubleQuotes $ ppr n
   | otherwise = Ppr.sdocWithDynFlags $ \ dflags ->
